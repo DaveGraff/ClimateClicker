@@ -2,15 +2,30 @@
 <html>
 <head>
 	<title>Climate Clicker</title>
-	<link href="\static\css\main.css" type="text/css" rel="stylesheet"></link>
+	<link href="..\static\css\main.css" type="text/css" rel="stylesheet"></link>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body>
-	<img id="mainIcon" src="\static\images\Recycle.png">
+<body style="background-image: url('../static/images/Background.jpg');">
+	<img id="mainIcon" src="..\static\images\Recycle.png">
 	<div id="upgradePanel">
 		<button class="collapsible" id="upgrades">Upgrades</button>
 		<div class="content">
-			<p>Content goes here, ya know, some more buttons</p>
+			<button id="upgrade1" onclick="handleUpgrade(-1, 1, 'upgrade1', 25)">Double Click!</button>
+			<!-- <button id="upgrade2" onclick="handleUpgrade(-1, 1, 'upgrade2')">Double Click!</button>
+			<button id="upgrade3" onclick="handleUpgrade(0, 1, 'upgrade3')">Double Click!</button>
+			<button id="upgrade4" onclick="handleUpgrade(0, 1, 'upgrade4')">Double Click!</button>
+			<button id="upgrade5" onclick="handleUpgrade(1, 1, 'upgrade5')">Double Click!</button>
+			<button id="upgrade6" onclick="handleUpgrade(1, 1, 'upgrade6')">Double Click!</button>
+			<button id="upgrade7" onclick="handleUpgrade(2, 1, 'upgrade7')">Double Click!</button>
+			<button id="upgrade8" onclick="handleUpgrade(2, 1, 'upgrade8')">Double Click!</button>
+			<button id="upgrade9" onclick="handleUpgrade(3, 1, 'upgrade9')">Double Click!</button>
+			<button id="upgrade10" onclick="handleUpgrade(3, 1, 'upgrade10')">Double Click!</button>
+			<button id="upgrade11" onclick="handleUpgrade(4, 1, 'upgrade11')">Double Click!</button>
+			<button id="upgrade12" onclick="handleUpgrade(4, 1, 'upgrade12')">Double Click!</button>
+			<button id="upgrade13" onclick="handleUpgrade(5, 1, 'upgrade13')">Double Click!</button>
+			<button id="upgrade14" onclick="handleUpgrade(5, 1, 'upgrade14')">Double Click!</button>
+			<button id="upgrade15" onclick="handleUpgrade(6, 1, 'upgrade15')">Double Click!</button>
+			<button id="upgrade16" onclick="handleUpgrade(6, 1, 'upgrade16')">Double Click!</button> -->
 		</div>
 	</div>
 	<div id="itemsPanel">
@@ -61,10 +76,11 @@
 		pointsCounter = 0;
 
 		//Help the climate & your points by clicking!
+		clickPower = 1;
 		updatePoints(0);
 		$("#climateState").text(climateState);
 		$("#mainIcon").click(function(evt){
-			updatePoints(1);
+			updatePoints(clickPower);
 			$("#climateState").text(++climateState);
 		});
 
@@ -118,6 +134,17 @@
 		function updatePoints(change) {
 			pointsCounter += change;
 			$("#pointsCounter").text(pointsCounter);
+		}
+
+		function handleUpgrade(upgradeIndex, change, upgradeId, cost){
+			if(cost <= pointsCounter){
+				updatePoints(-25);
+				if(upgradeIndex == -1)
+					clickPower += change;
+				else
+					itemEffectiveness[upgradeIndex] += change;
+				$('#' + upgradeId).detach();
+			}
 		}
 </script>
 <script>
