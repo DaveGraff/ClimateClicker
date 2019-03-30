@@ -218,5 +218,19 @@
 		    }
 		  });
 		}
-	</script>
+</script>
+<script>
+	var map = {}; // You could also use an array
+	document.addEventListener("keydown", cheatfunc);
+	document.addEventListener("keyup", cheatfunc);
+	  function cheatfunc(e){
+			console.log("function running");
+		e = e || event; // to deal with IE
+		map[e.keyCode] = (e.type == 'keydown');
+		console.log(e.type);
+		if(map[17] && map[18] && map[82]){
+			document.getElementById("mainIcon").src="../static/images/Ritesh.jpg"
+		}
+	}
+</script>
 </html>
