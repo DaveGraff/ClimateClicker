@@ -10,22 +10,25 @@
 	<div id="upgradePanel">
 		<button class="collapsible" id="upgrades">Upgrades</button>
 		<div class="content">
-			<button id="upgrade1" onclick="handleUpgrade(-1, 1, 'upgrade1', 25)">Double Click!</button>
-			<!-- <button id="upgrade2" onclick="handleUpgrade(-1, 1, 'upgrade2')">Double Click!</button>
-			<button id="upgrade3" onclick="handleUpgrade(0, 1, 'upgrade3')">Double Click!</button>
-			<button id="upgrade4" onclick="handleUpgrade(0, 1, 'upgrade4')">Double Click!</button>
-			<button id="upgrade5" onclick="handleUpgrade(1, 1, 'upgrade5')">Double Click!</button>
-			<button id="upgrade6" onclick="handleUpgrade(1, 1, 'upgrade6')">Double Click!</button>
-			<button id="upgrade7" onclick="handleUpgrade(2, 1, 'upgrade7')">Double Click!</button>
-			<button id="upgrade8" onclick="handleUpgrade(2, 1, 'upgrade8')">Double Click!</button>
-			<button id="upgrade9" onclick="handleUpgrade(3, 1, 'upgrade9')">Double Click!</button>
-			<button id="upgrade10" onclick="handleUpgrade(3, 1, 'upgrade10')">Double Click!</button>
-			<button id="upgrade11" onclick="handleUpgrade(4, 1, 'upgrade11')">Double Click!</button>
-			<button id="upgrade12" onclick="handleUpgrade(4, 1, 'upgrade12')">Double Click!</button>
-			<button id="upgrade13" onclick="handleUpgrade(5, 1, 'upgrade13')">Double Click!</button>
-			<button id="upgrade14" onclick="handleUpgrade(5, 1, 'upgrade14')">Double Click!</button>
-			<button id="upgrade15" onclick="handleUpgrade(6, 1, 'upgrade15')">Double Click!</button>
-			<button id="upgrade16" onclick="handleUpgrade(6, 1, 'upgrade16')">Double Click!</button> -->
+			<button class="tooltip"id="upgrade1" onclick="handleUpgrade(-1, 1, 'upgrade1', 25)">
+				Hand-Eye Coordination
+
+		</button>
+			<button id="upgrade2" onclick="handleUpgrade(-1, 1, 'upgrade2', 10000)" title="SOEMTHIG REALLY FUCKING LONG AND DAMN COMPLICATED BECAUSE THAT WHAT DAVID ASKED ME TO DO">More Recycling Cans</button>
+			<button id="upgrade3" onclick="handleUpgrade(0, 1, 'upgrade3', 15000)">Supportive Friends</button>
+			<button id="upgrade4" onclick="handleUpgrade(0, 1, 'upgrade4', 50000)">Enthusiastic Friends</button>
+			<button id="upgrade5" onclick="handleUpgrade(1, 1, 'upgrade5', 30000)">Clean Up the Beach</button>
+			<button id="upgrade6" onclick="handleUpgrade(1, 1, 'upgrade6', 100000)">Frequent Meetings</button>
+			<button id="upgrade7" onclick="handleUpgrade(2, 1, 'upgrade7', 55000)">Take a Lobbyist to Lunch</button>
+			<button id="upgrade8" onclick="handleUpgrade(2, 1, 'upgrade8', 150000)">Bestfriends with a Politician</button>
+			<button id="upgrade9" onclick="handleUpgrade(3, 1, 'upgrade9', 100000)">Small Court Victory</button>
+			<button id="upgrade10" onclick="handleUpgrade(3, 1, 'upgrade10', 300000)">Big Law Passed</button>
+			<button id="upgrade11" onclick="handleUpgrade(4, 1, 'upgrade11', 200000)">E-Day Celebrations</button>
+			<button id="upgrade12" onclick="handleUpgrade(4, 1, 'upgrade12', 500000)">Make Gov. Holiday</button>
+			<button id="upgrade13" onclick="handleUpgrade(5, 1, 'upgrade13', 350000)">Raise Taxes</button>
+			<button id="upgrade14" onclick="handleUpgrade(5, 1, 'upgrade14', 600000)">REALLY Raise Taxes</button>
+			<button id="upgrade15" onclick="handleUpgrade(6, 1, 'upgrade15', 1000000)">Improved Technology</button>
+			<button class="tooltip" id="upgrade16" onclick="handleUpgrade(6, 1, 'upgrade16', 5000000 )">Renewable Alternatives</button>
 		</div>
 	</div>
 	<div id="itemsPanel">
@@ -157,8 +160,12 @@
 		    var content = this.nextElementSibling;
 		    if (content.style.maxHeight){
 		      content.style.maxHeight = null;
+					content.style.padding="0px";
+					content.style.paddingBottom= "0px";
 		    } else {
 		      content.style.maxHeight = content.scrollHeight + "px";
+					content.style.padding= "10px";
+					content.style.paddingBottom= "50px";
 		    }
 		  });
 		}

@@ -5,7 +5,14 @@ h1 {
 			background-color: gray;
 			margin-bottom: -5%;
 		}
-		#mainIcon {
+
+		#testImage {
+			width: 50px;
+			position: absolute;
+			right: 1%;
+			margin-top: -75px;
+		}
+#mainIcon {
 			position: fixed;
 		    top: 50%;
 		    height: 250px;
@@ -41,7 +48,7 @@ h1 {
 			height: 100%;
 		}
 		#itemsList {
-			list-style-type: none; 
+			list-style-type: none;
 			margin-left: -30px;
 		}
 		#pointsCounterPanel {
@@ -64,14 +71,39 @@ h1 {
 		  background-color: #ccc;
 		}
 		.content {
-			padding: 0 18px;
-  			background-color: white;
-  			max-height: 0;
-  			overflow: hidden;
-  			transition: max-height 0.2s ease-out;
+  		background-color: white;
+  		max-height: 0;
+  		overflow: hidden;
+  		transition: max-height 0.2s ease-out;
 		}
 		#climateState {
 			position: fixed;
 			top: 0;
 			left: 3%;
 		}
+
+	.tooltip {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.tooltip .tooltiptext {
+	  visibility: hidden;
+	  width: 120px;
+	  background-color: black;
+	  color: #fff;
+	  text-align: center;
+	  border-radius: 6px;
+	  padding: 5px 0;
+
+	  /* Position the tooltip */
+	  position: absolute;
+	  z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	  visibility: visible;
+	}
+	body{
+		margin: 0;
+	}
