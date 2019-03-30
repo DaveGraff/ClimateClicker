@@ -4,15 +4,9 @@ h1 {
 		li {
 			background-color: gray;
 			margin-bottom: -5%;
+			opacity: .95;
 		}
-
-		#testImage {
-			width: 50px;
-			position: absolute;
-			right: 1%;
-			margin-top: -75px;
-		}
-#mainIcon {
+		#mainIcon {
 			position: fixed;
 		    top: 50%;
 		    height: 250px;
@@ -32,49 +26,59 @@ h1 {
 			bottom: 0px;
 			left: 0px;
 			position: fixed;
-    		border: 1px solid white;
-	   		border-right: 0px;
-		  	background-color: grey;
+	   	border-right: 0px;
+		  background-color: RGB(33,92,210,0);
 			width: 80%;
-			transition: width: 0.2s ease-out;
+			opacity: .90;
+		}
+		#collapsible_button{
+			background-color: rgb(192,192,192,.2);
+			width: 100%;
 		}
 		#itemsPanel {
 			position: fixed;
 			right: 0px;
-			background-color: maroon;
-			border: 1px solid white;
+			background-color:RGB(33,92,210,0);
+			opacity: .90;
 			border-left: 0px;
 			width: 20%;
 			height: 100%;
+			text-align: center;
 		}
 		#itemsList {
 			list-style-type: none;
-			margin-left: -30px;
+			align: center;
 		}
 		#pointsCounterPanel {
 			position: fixed;
 			left: 3%;
 			top: 3%;
+
 		}
 		.collapsible {
-			background-color: #eee;
+			background-color: rgb(192,192,192,0);
 			color: #444;
 			cursor: pointer;
-			padding: 18px;
 			border: none;
 			text-align: center;
 			outline: none;
-			font-size: 15px;
 			width: 100%;
+			opacity: .90;
 		}
-		.active, .collapsible:hover {
-		  background-color: #ccc;
+		.collapsible:hover {
+		  background-color: RGB(33,92,210, 0);
+			opacity: .90;
+		}
+		.collapsible:active {
+			background-color: RGB(33,92,210, .2);
+			orphans: .90;
 		}
 		.content {
-  		background-color: white;
+  		background-color: RGB(33,92,210, 0);
   		max-height: 0;
   		overflow: hidden;
   		transition: max-height 0.2s ease-out;
+			opacity: .90;
 		}
 		#climateState {
 			position: fixed;
@@ -106,4 +110,33 @@ h1 {
 	}
 	body{
 		margin: 0;
+	}
+	button{
+		padding: 12px;
+		border-radius: 10px;
+		text-align: center;
+		width: 200px;
+	}
+	table{
+		width: 100%;
+	}
+	.button2{
+		width: 275px;
+		padding: 0px;
+		text-align: center;
+	}
+
+	#bar{
+		width: 100%;
+  	background-color: grey;
+		text-align: center;
+		position: fixed;
+		top: 0;
+		height: 20px;
+	}
+	#prog{
+		width: 0px;
+		background-color: green;
+		height: 20px;
+		display: inline-block;
 	}
