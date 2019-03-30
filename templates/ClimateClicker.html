@@ -2,65 +2,138 @@
 <html>
 <head>
 	<title>Climate Clicker</title>
-	<style type="text/css">
-		h1 {
-			text-align: center;
-		}
-		#mainIcon {
-			position: fixed;
-		    top: 50%;
-		    height: 250px;
-		    width: 250px;
-		    left: 50%;
-		    margin-top: -125px;
-		    margin-left: -125px;
-		}
-		#upgradePanel {
-			bottom: 0px;
-			left: 0px;
-		    position: fixed;
-		    width: 75%;
-		    height: 15%;
-		    border: 1px solid white;
-		    border-right: 0px;
-		    background-color: grey;
-		}
-		#itemsPanel {
-			position: fixed;
-			right: 0px;
-			width: 25%;
-			height: 100%;
-			background-color: maroon;
-			border: 1px solid white;
-			border-left: 0px;
-		}
-		#pointsCounterPanel {
-			position: fixed;
-			left: 3%;
-			top: 3%;
-		}
-	</style>
+	<link href="\static\css\main.css" type="text/css" rel="stylesheet"></link>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		//setInterval(function(){console.log("Does this work?");}, 1000);
-		counter = 0;
-
-		$("#pointsCounter").val;
-		$("#mainIcon").click(function(evt){
-			$("#pointsCounter").val = ++counter;
-		});
-	</script>
 </head>
 <body>
 	<img id="mainIcon" src="\static\images\Recycle.png">
 	<div id="upgradePanel">
-		<h1>Upgrades</h1>
+		<button class="collapsible" id="upgrades">Upgrades</button>
+		<div class="content">
+			<p>Content goes here, ya know, some more buttons</p>
+		</div>
 	</div>
 	<div id="itemsPanel">
 		<h1>Items</h1>
+		<ul id="itemsList" style="">
+			<li>
+				<h2>Grab a friend</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Organize a community cleanup</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Convince a local official</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Get a law passed</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Make a new Earth Day</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Create a carbon tax</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+			<li>
+				<h2>Set an emissions goal</h2>
+				<p>Owned: <span>0</span> Cost: <span>0</span></p>
+			</li>
+		</ul>
 	</div>
 	<div id="pointsCounterPanel">
-		<h1 id="pointsCounter"></h1>
+		<h2>Points: <span id="pointsCounter"></span></h2>
 	</div>
+	<div id="climateState"></div>
+	
 </body>
+<script type="text/javascript">
+		//Call timing function
+		setInterval(Function("timeIncrement();"), 1000);
+
+		//Initialize the two most important variables
+		var climateState = 0;
+		pointsCounter = 0;
+
+		//Help the climate & your points by clicking!
+		updatePoints(0);
+		$("#climateState").text(climateState);
+		$("#mainIcon").click(function(evt){
+			updatePoints(1);
+			$("#climateState").text(++climateState);
+		});
+
+		itemCount = new Array($('#itemsList li').length).fill(0);
+		itemEffectiveness = new Array($('#itemsList li').length).fill(1);
+
+		$("#itemsList li").each(function(){
+			index = $(this).index();
+			//Set cost
+			$(this).children().eq(1).children().eq(1).text(itemCost(index, itemCount[index]));
+
+			$(this).click(function(e){
+				index = $(this).index();
+				cost = itemCost(index, itemCount[index]);
+				if(cost <= pointsCounter){
+					updatePoints(-(cost));
+					//Reset cost
+					$(this).children().eq(1).children().eq(1).text(itemCost(index, ++itemCount[index]));
+					//Reset num owned
+					$(this).children().eq(1).children().eq(0).text(itemCount[index]);
+				}
+				e.preventDefault();
+			});
+		});
+
+		var timePassed = 0;
+		function timeIncrement(){
+			climateState -= Math.pow(2, Math.floor(timePassed / 30));
+
+			for (var i = 0; i < itemCount.length; i++) {
+				gain = itemGain(i);
+				updatePoints(gain);
+				climateState += gain;
+				$("#climateState").text(climateState);
+			}
+
+			$("#climateState").text(climateState);
+			timePassed++;
+		}
+
+
+
+		function itemCost(index, numOwned){
+			return Math.ceil(Math.pow(2, index*3) * Math.pow(1.5, numOwned));
+		}
+
+		function itemGain(index){
+			return Math.ceil(Math.pow(2, 2 * index) * itemEffectiveness[index] * itemCount[index]);
+		}
+
+		function updatePoints(change) {
+			pointsCounter += change;
+			$("#pointsCounter").text(pointsCounter);
+		}
+</script>
+<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var row = document.getElementsByClassName("side_collapsible");
+		var i;
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var content = this.nextElementSibling;
+		    if (content.style.maxHeight){
+		      content.style.maxHeight = null;
+		    } else {
+		      content.style.maxHeight = content.scrollHeight + "px";
+		    }
+		  });
+		}
+	</script>
 </html>
