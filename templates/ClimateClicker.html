@@ -3,6 +3,9 @@
 <head>
 	<title>Climate Clicker</title>
 	<style type="text/css">
+		h1 {
+			text-align: center;
+		}
 		#mainIcon {
 			position: fixed;
 		    top: 50%;
@@ -12,10 +15,52 @@
 		    margin-top: -125px;
 		    margin-left: -125px;
 		}
+		#upgradePanel {
+			bottom: 0px;
+			left: 0px;
+		    position: fixed;
+		    width: 75%;
+		    height: 15%;
+		    border: 1px solid white;
+		    border-right: 0px;
+		    background-color: grey;
+		}
+		#itemsPanel {
+			position: fixed;
+			right: 0px;
+			width: 25%;
+			height: 100%;
+			background-color: maroon;
+			border: 1px solid white;
+			border-left: 0px;
+		}
+		#pointsCounterPanel {
+			position: fixed;
+			left: 3%;
+			top: 3%;
+		}
 	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		//setInterval(function(){console.log("Does this work?");}, 1000);
+		counter = 0;
+
+		$("#pointsCounter").val;
+		$("#mainIcon").click(function(evt){
+			$("#pointsCounter").val = ++counter;
+		});
+	</script>
 </head>
 <body>
-	<div id="ClimateBar"></div>
 	<img id="mainIcon" src="\static\images\Recycle.png">
+	<div id="upgradePanel">
+		<h1>Upgrades</h1>
+	</div>
+	<div id="itemsPanel">
+		<h1>Items</h1>
+	</div>
+	<div id="pointsCounterPanel">
+		<h1 id="pointsCounter"></h1>
+	</div>
 </body>
 </html>
