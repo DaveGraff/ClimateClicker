@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home')
 def home():
-	return 'This is a test!'
+	return render_template('ClimateClicker.html')
 
 if __name__ == '__main__':
     app.run()
