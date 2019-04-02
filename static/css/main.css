@@ -1,142 +1,150 @@
 h1 {
-			text-align: center;
-		}
-		li {
-			background-color: gray;
-			margin-bottom: -5%;
-			opacity: .95;
-		}
-		#mainIcon {
-			position: fixed;
-		    top: 50%;
-		    height: 250px;
-		    width: 250px;
-		    left: 40%;
-		    margin-top: -125px;
-		    margin-left: -125px;
-		}
-		#mainIcon:hover {
-			opacity: 0.8;
-			transform: scale(1.03);
-		}
-		#mainIcon:active{
-			transform: scale(.97);
-		}
-		#upgradePanel {
-			bottom: 0px;
-			left: 0px;
-			position: fixed;
-	   	border-right: 0px;
-		  background-color: RGB(33,92,210,0);
-			width: 80%;
-			opacity: .90;
-		}
-		#collapsible_button{
-			background-color: rgb(192,192,192,.2);
-			width: 100%;
-		}
-		#itemsPanel {
-			position: fixed;
-			right: 0px;
-			background-color:RGB(33,92,210,0);
-			opacity: .90;
-			border-left: 0px;
-			width: 20%;
-			height: 100%;
-			text-align: center;
-		}
-		#itemsList {
-			list-style-type: none;
-			align: center;
-		}
-		#pointsCounterPanel {
-			position: fixed;
-			left: 3%;
-			top: 3%;
+	text-align: center;
+}
+li {
+	background-color: gray;
+	margin-bottom: -5%;
+	opacity: .95;
+}
+#mainIcon {
+	position: fixed;
+	top: 50%;
+	height: 250px;
+	width: 250px;
+	left: 40%;
+	margin-top: -125px;
+	margin-left: -125px;
+}
+#mainIcon:hover {
+	opacity: 0.8;
+	transform: scale(1.03);
+}
+#mainIcon:active{
+	transform: scale(.97);
+}
+#upgradePanel {
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+	border-right: 0px;
+	background-color: RGB(33,92,210,0);
+	width: 80%;
+	opacity: .90;
+}
+#collapsible_button{
+	background-color: rgb(192,192,192,.2);
+	width: 100%;
+}
+#itemsPanel {
+	position: fixed;
+	right: 0px;
+	background-color:RGB(33,92,210,0);
+	opacity: .90;
+	border-left: 0px;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+}
+#itemsList {
+	list-style-type: none;
+	align: center;
+}
+#pointsCounterPanel {
+	position: fixed;
+	left: 3%;
+	top: 4%;
 
-		}
-		.collapsible {
-			background-color: rgb(192,192,192,0);
-			color: #444;
-			cursor: pointer;
-			border: none;
-			text-align: center;
-			outline: none;
-			width: 100%;
-			opacity: .90;
-		}
-		.collapsible:hover {
-		  background-color: RGB(33,92,210, 0);
-			opacity: .90;
-		}
-		.collapsible:active {
-			background-color: RGB(33,92,210, .2);
-			orphans: .90;
-		}
-		.content {
-  		background-color: RGB(33,92,210, 0);
-  		max-height: 0;
-  		overflow: hidden;
-  		transition: max-height 0.2s ease-out;
-			opacity: .90;
-		}
-		#climateState {
-			position: fixed;
-			top: 0;
-			left: 3%;
-		}
+}
+.collapsible {
+	background-color: rgb(192,192,192,0);
+	color: #444;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	outline: none;
+	width: 100%;
+	opacity: .90;
+}
+.collapsible:hover {
+	background-color: RGB(33,92,210, 0);
+	opacity: .90;
+}
+.collapsible:active {
+	background-color: RGB(33,92,210, .2);
+	orphans: .90;
+}
+.content {
+	background-color: RGB(33,92,210, 0);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	opacity: .90;
+}
+#climateStatePanel {
+	position: fixed;
+	top: 0;
+	left: 3%;
+}
 
-	.tooltip {
-	  position: relative;
-	  display: inline-block;
-	}
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
 
-	.tooltip .tooltiptext {
-	  visibility: hidden;
-	  width: 120px;
-	  background-color: black;
-	  color: #fff;
-	  text-align: center;
-	  border-radius: 6px;
-	  padding: 5px 0;
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
 
-	  /* Position the tooltip */
-	  position: absolute;
-	  z-index: 1;
-	}
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+}
 
-	.tooltip:hover .tooltiptext {
-	  visibility: visible;
-	}
-	body{
-		margin: 0;
-	}
-	button{
-		padding: 12px;
-		border-radius: 10px;
-		text-align: center;
-		width: 200px;
-	}
-	table{
-		width: 100%;
-	}
-	.button2{
-		width: 275px;
-		padding: 0px;
-		text-align: center;
-	}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+body{
+	margin: 0;
+}
+button{
+	padding: 12px;
+	border-radius: 10px;
+	text-align: center;
+	width: 200px;
+}
+table{
+	width: 100%;
+}
+.button2{
+	width: 275px;
+	padding: 0px;
+	text-align: center;
+}
 
-	#bar{
-		width: 100%;
-  	background-color: grey;
-		text-align: center;
-		position: fixed;
-		top: 0;
-		height: 20px;
-	}
-	#prog{
-		width: 0px;
-		background-color: green;
-		height: 20px;
-		display: inline-block;
-	}
+.buttonDisabled {
+	opacity: .7;
+}
+.buttonDisabledUpgrade {
+	opacity: .7;
+}
+
+
+#bar{
+	width: 100%;
+	background-color: grey;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	height: 20px;
+}
+#prog{
+	width: 0px;
+	background-color: green;
+	height: 20px;
+	display: inline-block;
+}

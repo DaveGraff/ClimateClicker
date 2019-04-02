@@ -10,38 +10,38 @@
 	<div id="upgradePanel">
 		<button class="collapsible_button" id="upgrades"><h2>Upgrades</h2></button>
 		<div class="content">
-		<table>
+			<table>
 				<tr align="center">
-					<td><button class="tooltip"id="upgrade1" onclick="handleUpgrade(-1, 1, 'upgrade1', 25)">Hand-Eye Coordination <br />($25)</button></td>
-					<td><button id="upgrade2" onclick="handleUpgrade(-1, 1, 'upgrade2', 10000)">More Recycling Cans <br />($10,000)</button></td>
-					<td><button id="upgrade3" onclick="handleUpgrade(0, 1, 'upgrade3', 15000)">Supportive Friends <br />($15,000)</button></td>
-					<td><button id="upgrade4" onclick="handleUpgrade(0, 1, 'upgrade4', 50000)">Enthusiastic Friends <br />($50,000)</button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade1" onclick="handleUpgrade(-1, 1, 'upgrade1', 25)">Hand-Eye Coordination <br /><span>($25)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade2" onclick="handleUpgrade(-1, 1, 'upgrade2', 10000)">More Recycling Cans <br /><span>($10,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade3" onclick="handleUpgrade(0, 1, 'upgrade3', 15000)">Supportive Friends <br /><span>($15,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade4" onclick="handleUpgrade(0, 1, 'upgrade4', 50000)">Enthusiastic Friends <br /><span>($50,000)</span></button></td>
 				</tr>
 				<tr align="center">
-					<td><button id="upgrade5" onclick="handleUpgrade(1, 1, 'upgrade5', 30000)">Clean Up the Beach <br />($30,000)</button></td>
-					<td><button id="upgrade6" onclick="handleUpgrade(1, 1, 'upgrade6', 100000)">Frequent Meetings <br />($100,000)</button></td>
-					<td><button id="upgrade7" onclick="handleUpgrade(2, 1, 'upgrade7', 55000)">Take a Lobbyist to Lunch <br />($55,000)</button></td>
-					<td><button id="upgrade8" onclick="handleUpgrade(2, 1, 'upgrade8', 150000)">Bestfriends with a Politician <br />($150,000)</button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade5" onclick="handleUpgrade(1, 1, 'upgrade5', 30000)">Clean Up the Beach <br /><span>($30,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade6" onclick="handleUpgrade(1, 1, 'upgrade6', 100000)">Frequent Meetings <br /><span>($100,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade7" onclick="handleUpgrade(2, 1, 'upgrade7', 55000)">Take a Lobbyist to Lunch <br /><span>($55,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade8" onclick="handleUpgrade(2, 1, 'upgrade8', 150000)">Bestfriends with a Politician <br /><span>($150,000)</span></button></td>
 				</tr>
 				<tr align="center">
-					<td><button id="upgrade9" onclick="handleUpgrade(3, 1, 'upgrade9', 100000)">Small Court Victory <br />($100,000)</button></td>
-					<td><button id="upgrade10" onclick="handleUpgrade(3, 1, 'upgrade10', 300000)">Big Law Passed <br />($300,000)</button></td>
-					<td><button id="upgrade11" onclick="handleUpgrade(4, 1, 'upgrade11', 200000)">E-Day Celebrations <br />($200,000)</button></td>
-					<td><button id="upgrade12" onclick="handleUpgrade(4, 1, 'upgrade12', 500000)">Make Gov. Holiday <br />($500,000)</button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade9" onclick="handleUpgrade(3, 1, 'upgrade9', 100000)">Small Court Victory <br /><span>($100,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade10" onclick="handleUpgrade(3, 1, 'upgrade10', 300000)">Big Law Passed <br /><span>($300,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade11" onclick="handleUpgrade(4, 1, 'upgrade11', 200000)">E-Day Celebrations <br /><span>($200,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade12" onclick="handleUpgrade(4, 1, 'upgrade12', 500000)">Make Gov. Holiday <br /><span>($500,000)</span></button></td>
 				</tr>
 				<tr align="center">
-					<td><button id="upgrade13" onclick="handleUpgrade(5, 1, 'upgrade13', 350000)">Raise Taxes <br />($350,000)</button></td>
-					<td><button id="upgrade14" onclick="handleUpgrade(5, 1, 'upgrade14', 600000)">REALLY Raise Taxes <br />($600,000)</button></td>
-					<td><button id="upgrade15" onclick="handleUpgrade(6, 1, 'upgrade15', 1000000)">Improved Technology <br />($1,000,000)</button></td>
-					<td><button class="tooltip" id="upgrade16" onclick="handleUpgrade(6, 1, 'upgrade16', 5000000 )">Renewable Alternatives <br />($5,000,000)</button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade13" onclick="handleUpgrade(5, 1, 'upgrade13', 350000)">Raise Taxes <br /><span>($350,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade14" onclick="handleUpgrade(5, 1, 'upgrade14', 600000)">REALLY Raise Taxes <br /><span>($600,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade15" onclick="handleUpgrade(6, 1, 'upgrade15', 1000000)">Improved Technology <br /><span>($1,000,000)</span></button></td>
+					<td><button class="buttonDisabledUpgrade" id="upgrade16" onclick="handleUpgrade(6, 1, 'upgrade16', 5000000 )">Renewable Alternatives <br /><span>($5,000,000)</span></button></td>
 				</tr>
-		</table>
+			</table>
 		</div>
 	</div>
-	<div id="itemsPanel">
+	<div id="itemsPanel" style="margin-top: -15px;">
 		<h1>Items</h1>
-		<table id="itemsList">
-			<tr>
+		<table id="itemsList" style="margin-top: -20px;">
+			<tr class="buttonDisabled">
 				<td>
 					<button class="button2">
 						<h2>Grab a friend</h2>
@@ -49,40 +49,40 @@
 					</button>
 				</td>
 			</tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Organize a community cleanup</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Organize a community cleanup</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Convince a local official</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Convince a local official</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Get a law passed</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Get a law passed</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Make a new Earth Day</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Make a new Earth Day</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Create a carbon tax</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Create a carbon tax</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
-			<tr><td>
+			<tr class="buttonDisabled"><td>
 				<button class="button2">
-						<h2>Set an emissions goal</h2>
-						<p>Done: <span>0</span> Cost: <span>0</span></p>
+					<h2>Set an emissions goal</h2>
+					<p>Done: <span>0</span> Cost: <span>0</span></p>
 				</button>
 			</td></tr>
 		</table>
@@ -90,147 +90,10 @@
 	<div id="pointsCounterPanel">
 		<h2>Points: <span id="pointsCounter"></span></h2>
 	</div>
-	<div id="climateState"></div>
+
+	<div id="climateStatePanel">
+		<h2>Climate Health: <span id="climateState"></span></h2>
+	</div>
 </body>
-<script type="text/javascript">
-		//Call timing function
-		setInterval(Function("timeIncrement();"), 1000);
-
-		//Initialize the two most important variables
-		var climateState = 0;
-		pointsCounter = 0;
-
-		//Help the climate & your points by clicking!
-		clickPower = 1;
-		updatePoints(0);
-		$("#climateState").text(climateState);
-		$("#mainIcon").click(function(evt){
-			updatePoints(clickPower);
-			$("#climateState").text(++climateState);
-		});
-
-		itemCount = new Array(7).fill(0);
-		itemEffectiveness = new Array(7).fill(1);
-
-		$("#itemsList tr").each(function(){
-			orig = $(this).children().first().children().first();
-			index = $(this).index();
-			console.log(index)
-			//Set cost
-			orig.children().eq(1).children().eq(1).text(itemCost(index, itemCount[index]));
-			console.log($(this).children().eq(1).children().eq(1).text())
-			$(this).click(function(e){
-				orig = $(this).children().first().children().first();
-				index = $(this).index();
-				cost = itemCost(index, itemCount[index]);
-				if(cost <= pointsCounter){
-					updatePoints(-(cost));
-					//Reset cost
-					orig.children().eq(1).children().eq(1).text(itemCost(index, ++itemCount[index]));
-					//Reset num owned
-					orig.children().eq(1).children().eq(0).text(itemCount[index]);
-				}
-				e.preventDefault();
-			});
-		});
-
-		var timePassed = 0;
-		function timeIncrement(){
-			climateState -= Math.pow(2, Math.floor(timePassed / 30));
-			if(climateState < -5000000)
-				document.location.href = 'LosePage.html';
-			if(climateState > 5000000)
-				document.location.href = 'WinPage.html';
-
-			for (var i = 0; i < itemCount.length; i++) {
-				gain = itemGain(i);
-				updatePoints(gain);
-				climateState += gain;
-				$("#climateState").text(climateState);
-			}
-
-			$("#climateState").text(climateState);
-			timePassed++;
-		}
-
-
-
-		function itemCost(index, numOwned){
-			return Math.ceil(Math.pow(2, index*3) * Math.pow(1.5, numOwned));
-		}
-
-		function itemGain(index){
-			return Math.ceil(Math.pow(2, 2 * index) * itemEffectiveness[index] * itemCount[index]);
-		}
-
-		function updatePoints(change) {
-			pointsCounter += change;
-			$("#pointsCounter").text(pointsCounter);
-		}
-
-		function handleUpgrade(upgradeIndex, change, upgradeId, cost){
-			if(cost <= pointsCounter){
-				updatePoints(-25);
-				if(upgradeIndex == -1)
-					clickPower += change;
-				else
-					itemEffectiveness[upgradeIndex] += change;
-				$('#' + upgradeId).detach();
-			}
-		}
-		function move() {
-			var elem = document.getElementById("prog");
-			var width = 1;
-			var id = setInterval(frame, 10);
-			function frame() {
-				if (width >= 100) {
-					clearInterval(id);
-				} else {
-					width++;
-					if(climateState>0){
-						elem.style.paddingLeft = climateState/5000000 + '%';
-						elem.style.backgroundColor="green";
-					}
-					else{
-						elem.style.paddingRight = climateState/5000000 + '%';
-						elem.style.backgroundColor="red";
-					}
-				}
-			}
-		}
-</script>
-<script>
-		var coll = document.getElementsByClassName("collapsible_button");
-		var row = document.getElementsByClassName("side_collapsible");
-		var i;
-		for (i = 0; i < coll.length; i++) {
-		  coll[i].addEventListener("click", function() {
-		    this.classList.toggle("active");
-		    var content = this.nextElementSibling;
-		    if (content.style.maxHeight){
-		      content.style.maxHeight = null;
-					content.style.padding="0px";
-					content.style.paddingBottom= "0px";
-		    } else {
-		      content.style.maxHeight = content.scrollHeight + "px";
-					content.style.padding= "10px";
-					content.style.paddingBottom= "50px";
-		    }
-		  });
-		}
-</script>
-<script>
-	var map = {}; // You could also use an array
-	document.addEventListener("keydown", cheatfunc);
-	document.addEventListener("keyup", cheatfunc);
-	  function cheatfunc(e){
-			console.log("function running");
-		e = e || event; // to deal with IE
-		map[e.keyCode] = (e.type == 'keydown');
-		console.log(e.type);
-		if(map[17] && map[18] && map[82]){
-			document.getElementById("mainIcon").src="../static/images/Ritesh.jpg"
-		}
-	}
-</script>
+<script src="..\static\js\functions.js"></script>
 </html>
