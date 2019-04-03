@@ -2,8 +2,10 @@
 setInterval(Function("timeIncrement();"), 1000);
 
 		//Initialize the two most important variables
-		var climateState = 0;
-		pointsCounter = 0;
+		var winRange = 5000000;
+		var climateState = (winRange/20);
+		var pointsCounter = 0;
+		checkClimateHealth();
 
 		//Help the climate & your points by clicking!
 		clickPower = 1;
@@ -12,6 +14,7 @@ setInterval(Function("timeIncrement();"), 1000);
 		$("#mainIcon").click(function(evt){
 			updatePoints(clickPower);
 			$("#climateState").text(++climateState);
+			checkClimateHealth();
 			checkAvailable();
 		});
 
@@ -42,9 +45,9 @@ setInterval(Function("timeIncrement();"), 1000);
 		var timePassed = 0;
 		function timeIncrement(){
 			climateState -= Math.pow(2, Math.floor(timePassed / 30));
-			if(climateState < -5000000)
+			if(climateState < -(winRange))
 				document.location.href = 'LosePage.html';
-			if(climateState > 5000000)
+			if(climateState > winRange)
 				document.location.href = 'WinPage.html';
 
 			for (var i = 0; i < itemCount.length; i++) {
@@ -56,6 +59,7 @@ setInterval(Function("timeIncrement();"), 1000);
 
 			$("#climateState").text(climateState);
 			checkAvailable();
+			checkClimateHealth();
 			timePassed++;
 		}
 
@@ -148,7 +152,6 @@ setInterval(Function("timeIncrement();"), 1000);
 		$(".buttonDisabledUpgrade").each(function(){
 			var cost = $(this).children().eq(1).text();
 			cost = cost.replace(/[\$,\(\)]/g, "");
-			console.log(cost)
 			if(parseInt(cost) <= pointsCounter){
 				$(this).addClass("buttonEnabledUpgrade");
 				$(this).removeClass("buttonDisabledUpgrade");
@@ -173,4 +176,17 @@ setInterval(Function("timeIncrement();"), 1000);
 				$(this).removeClass("buttonEnabledUpgrade");
 			}
 		});
+	}
+
+	function checkClimateHealth(){
+		var stateVal = (climateState / winRange) * (window.innerWidth / 2);
+		if(climateState < 0){
+			$("#climateBarNegative").css('left', (window.innerWidth / 2) + (stateVal));
+			$("#climateBarNegative").css('width', -(stateVal));
+			$("#climateBarPositive").css('width', 0);
+			console.log()
+		} else {
+			$("#climateBarPositive").css('width', stateVal);
+			$("#climateBarNegative").css('width', 0);
+		}
 	}
